@@ -5,7 +5,11 @@ const outputDir = path.resolve("./output");
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
 }
-const config = JSON.parse(fs.readFileSync(process.env.SWTL_CMS_CONFIG_FILE, 'utf8'));
+const config = JSON.parse(
+  fs.readFileSync(
+    path.resolve('.', process.env.SWTL_CMS_CONFIG_FILE), 'utf8'
+  )
+);
 
 function renderHtml(settings, content) {
   return `
