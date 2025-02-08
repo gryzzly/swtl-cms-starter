@@ -1,0 +1,43 @@
+{
+  "name": "A website",
+  "description": "",
+  "collections": [
+    {
+      "name": "pages",
+      "label": "Pages",
+      "fields": [
+        {
+          "label": "URL Path",
+          "name": "url",
+          "widget": "string",
+          "description": "The URL path for this page (e.g., 'about' or 'products/overview')"
+        },
+        {
+          "label": "Title",
+          "name": "title",
+          "widget": "string",
+          "description": "Page title - appears in browser tab and search results"
+        },
+        {
+          "label": "Meta Description",
+          "name": "metaDescription",
+          "widget": "string",
+          "description": "Brief description for search engines and social sharing"
+        },
+        {
+          "label": "Body Content",
+          "name": "body",
+          "widget": "prosemirror-editor",
+          "description": "Main page content"
+        },
+        {
+          "label": "Published",
+          "name": "published",
+          "widget": "boolean",
+          "default": false,
+          "description": "Controls whether the page is live or draft"
+        }
+      ]
+    }
+  ]
+}
