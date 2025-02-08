@@ -8,6 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+      SWTL_CMS_GITHUB_USER: ${{ github.repository_owner }}
+      SWTL_CMS_GITHUB_REPO: ${{ github.event.repository.name }}
+      SWTL_CMS_CONFIG_FILE: '/swtl-cms-congig.json'
+      SWTL_CMS_CONTENT_FILE: '/swtl-cms-content.json'
+
     steps:
       - uses: actions/checkout@v3
 
@@ -18,11 +25,6 @@ jobs:
 
       # Build SWTL CMS into /output/admin/…
       - name: Clone and build SWTL CMS
-        env:
-          SWTL_CMS_GITHUB_USER: ${{ github.repository_owner }}
-          SWTL_CMS_GITHUB_REPO: ${{ github.event.repository.name }}
-          SWTL_CMS_CONFIG_FILE: '/swtl-cms-congig.json'
-          SWTL_CMS_CONTENT_FILE: '/swtl-cms-content.json'
         run: |
           git clone https://github.com/gryzzly/swtl-cms.git temp-cms
           cd temp-cms
