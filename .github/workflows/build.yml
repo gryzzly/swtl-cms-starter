@@ -12,7 +12,7 @@ jobs:
     env:
       SWTL_CMS_GITHUB_USER: ${{ github.repository_owner }}
       SWTL_CMS_GITHUB_REPO: ${{ github.event.repository.name }}
-      SWTL_CMS_CONFIG_FILE: 'swtl-cms-congig.json'
+      SWTL_CMS_CONFIG_FILE: 'swtl-cms-config.json'
       SWTL_CMS_CONTENT_FILE: 'swtl-cms-content.json'
 
     steps:
